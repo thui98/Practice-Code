@@ -31,11 +31,11 @@ void draw () {
   }
 
   if (locX-sz/2<0) {
-    velX*=abs(velX)*.5;
+    velX=abs(velX)*.8;
   }
 
   if (locX+sz/2>width) {
-    velX*=-abs(velX)*.5;
+    velX=-abs(velX)*.8;
   }
 }
 
