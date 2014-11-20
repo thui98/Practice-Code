@@ -5,16 +5,20 @@ int sz;
 void setup(){
  size(800,800);
  loc= new PVector(width/2,height/2);
- mouse= new PVector(mouseX, mouseY); 
+
  sz= 100;
 }
 
 void draw (){
-  background(255);
+   mouse= new PVector(mouseX, mouseY); 
+  background(0);
   
   if(loc.dist(mouse) < sz/2){
-   loc.set(random(width),random(height)); 
+   loc.set(random(width),random(height));
+
   }
+  else 
+
    ellipse(loc.x,loc.y, sz,sz);
   
 }
