@@ -23,7 +23,7 @@ void setup(){
     sz[i]=random(20, 40); 
     loc[i]= new PVector(random(sz[i], width-sz[i]), random(sz[i], height-sz[i]));
     vel[i]= PVector.random2D(); 
-    acc[i]= new PVector
+    acc[i]= new PVector (0,0);
     
 }
 
