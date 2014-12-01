@@ -3,7 +3,7 @@
 void setup(){
   size(800,600);
 
-  jellyfish= loadImage("Jellyfish.jpeg");
+  jellyfish= loadImage("Jellyfish.jpg");
 
  
 }
