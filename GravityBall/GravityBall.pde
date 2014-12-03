@@ -1,16 +1,21 @@
-GBall b;
+GBall[] b= new GBall [50] ;
 
 void setup() {
   size(800, 600);
-  b= new GBall();
+  
+  for(int i=0; i<b.length; i++){
+  b[i]= new GBall();
+}
 }
 
 void draw() {
   background(0);
 
-  b.display();
-  b.move();
-  b.bounce();
+for(int i=0; i<b.length; i++){
+  b[i].display();
+  b[i].move();
+  b[i].bounce();
+}
 }
 
 class GBall {
@@ -18,7 +23,7 @@ class GBall {
   float d;
 
   GBall() {
-    loc= new PVector(random(width/2), random(height/2));
+    loc= new PVector(random(width), random(height/2));
     vel= PVector.random2D();
     acc= new PVector(0,.3);
     d= random(50,80);
