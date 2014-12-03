@@ -23,9 +23,9 @@ class GBall {
   float d;
 
   GBall() {
-    loc= new PVector(random(width), random(height/2));
+    loc= new PVector(400,200);
     vel= PVector.random2D();
-    acc= new PVector(0,.3);
+    acc= new PVector(0,.1);
     d= random(50,80);
   }
   void display() {
@@ -38,9 +38,12 @@ class GBall {
   }
 
   void bounce() {
-
-    if (loc.y>height-d/2 || loc.y<0+d/2) {
-      vel.mult(-1);
+//if (loc.x>width-d/2 || loc.x<0+d/2) {
+//      vel.x= -abs(vel.x);
+//}
+    if (loc.y>height-d/2) {
+      vel.y= -abs(vel.y);
+      
     }
   }
 }
