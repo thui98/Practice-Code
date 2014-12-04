@@ -6,7 +6,7 @@ void setup() {
    colorMode(HSB, 360,100,100,100);
   
   for(int i=0; i<b.length; i++){
-  b[i]= new GBall(i/2,i*2);
+  b[i]= new GBall(i/2,i/2);
 }
 
 }
@@ -36,7 +36,7 @@ class GBall {
   }
   
   GBall(float tempd, float tempbcolor){
- loc= new PVector(400,200);
+ loc= new PVector(random(width),random(height/2));
 
     vel= PVector.random2D();
     acc= new PVector(0,.1);
@@ -70,7 +70,7 @@ class GBall {
     }
   }
   void colorchange(){
-  fill(bcolor,100,100);
+  fill(bcolor,150,150, 50);
   }
 }
 
