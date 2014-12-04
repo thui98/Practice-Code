@@ -18,7 +18,12 @@ for(int i=0; i<b.length; i++){
   b[i].display();
   b[i].move();
   b[i].bounce();
-  b[i].colorchange();
+  b[i].ballColor();
+  for (int j=0; j<b.length; j++){
+   if(i!=j){
+    b[i].collision(j);
+   } 
+  }
 }
 
 }
@@ -36,8 +41,8 @@ class GBall {
   }
   
   GBall(float tempd, float tempbcolor){
- loc= new PVector(random(width),random(height/2));
-
+// loc= new PVector(random(width),random(height/2));
+loc= new PVector (400,200);
     vel= PVector.random2D();
     acc= new PVector(0,.1);
     d= tempd;
@@ -69,8 +74,15 @@ class GBall {
      vel.x= abs(vel.x); 
     }
   }
-  void colorchange(){
+  void ballColor(){
   fill(bcolor,150,150, 50);
+  }
+  
+  void collision(GBall other){
+   if(loc.dist(other.loc)<d/2+other.d/2){
+    vel= PVector.sub(loc,other.loc);
+    vel.normalize();
+   } 
   }
 }
 
