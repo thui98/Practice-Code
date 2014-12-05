@@ -1,4 +1,4 @@
-GBall[] b= new GBall [150] ;
+GBall[] b= new GBall [100] ;
 
 
 void setup() {
@@ -6,7 +6,7 @@ void setup() {
    colorMode(HSB, 360,100,100,100);
   
   for(int i=0; i<b.length; i++){
-  b[i]= new GBall(i/2,i/2);
+  b[i]= new GBall(i/2,i/2+300);
 }
 
 }
@@ -21,11 +21,10 @@ for(int i=0; i<b.length; i++){
   b[i].ballColor();
   for (int j=0; j<b.length; j++){
    if(i!=j){
-    b[i].collision(j);
+    b[i].collision(b[j]);
    } 
   }
 }
-
 }
 
 class GBall {
@@ -41,16 +40,16 @@ class GBall {
   }
   
   GBall(float tempd, float tempbcolor){
-// loc= new PVector(random(width),random(height/2));
-loc= new PVector (400,200);
+ loc= new PVector(random(width),random(height/2));
+//loc= new PVector (400,200);
     vel= PVector.random2D();
-    acc= new PVector(0,.1);
+    acc= new PVector(0,.05);
     d= tempd;
     bcolor= tempbcolor;
   }
   
   void display() {
-    
+
     ellipse(loc.x, loc.y, d, d);
   } 
   void move() {
@@ -59,9 +58,6 @@ loc= new PVector (400,200);
   }
 
   void bounce() {
-//if (loc.x>width-d/2 || loc.x<0+d/2) {
-//      vel.x= -abs(vel.x);
-//}
     if (loc.y>height-d/2) {
       vel.y= -abs(vel.y);
       
