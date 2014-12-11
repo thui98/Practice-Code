@@ -2,6 +2,7 @@ ArrayList<GBall> balls = new ArrayList<GBall> ();
 void setup(){
   size(800,600);
     balls.add(new GBall (100,100,100,100));
+    
 }
 
 void draw(){
@@ -19,6 +20,8 @@ for(int j=0; j<balls.size(); j++){
 }
   }
   
+ Pit p= new Pit();
+  p.display();
 }
 void mousePressed(){
  balls.add(new GBall (100,100,mouseX, mouseY)); 
