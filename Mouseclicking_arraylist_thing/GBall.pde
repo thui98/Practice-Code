@@ -50,6 +50,11 @@ class GBall {
    if(loc.dist(other.loc)<d/2+other.d/2){
     vel= PVector.sub(loc,other.loc);
     vel.normalize();
+   }
    } 
+   void newPlace(){
+     loc.set(mouseX, mouseY);
+    vel = PVector.random2D();
+   }
   }
-}
+

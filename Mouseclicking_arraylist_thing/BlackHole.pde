@@ -1,16 +1,18 @@
 class Pit{
   PVector loc;
- float size;
+ float d;
  
  Pit(){
-   size= 30;
+   d= 30;
    loc= new PVector (width/2, height/2);
  }
-// void eat(){
-//   if(loc.dist(other.loc)<d/2+other.d/2){
-//   
-// }
+ void take(GBall e){
+   if(loc.dist(e.loc)<d/2+e.d/2){
+   e.newPlace();
+   }
+ }
  void display(){
-  ellipse(loc.x,loc.y, size,size); 
+  
+  ellipse(loc.x,loc.y, d,d); 
  }
 }
