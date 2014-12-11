@@ -11,6 +11,12 @@ void draw(){
   b.display();
  b.move();
 b.bounce(); 
+for(int j=0; j<balls.size(); j++){
+ if(i!=j){
+   GBall c= balls.get(j);
+  b.collision(c);
+ } 
+}
   }
   
 }
