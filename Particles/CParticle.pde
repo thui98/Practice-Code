@@ -5,7 +5,7 @@ class Particle {
   Particle(float x, float y) {
     loc= new PVector(x, y);
     vel= PVector.random2D();
-    acc= new PVector(.01,.05);
+    acc= new PVector(0,.08);
     d= random(10, 20);
     t=100;
 //    pcolor= 0;

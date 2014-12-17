@@ -1,7 +1,10 @@
 ArrayList<Particle> parts= new ArrayList<Particle>();
+PImage ship;
+int d=100;
 void setup(){
   colorMode(HSB, 360,100,100,100);
   size(800,600);
+  ship= loadImage("Spaceship.png");
 }
 
 void draw(){
@@ -17,4 +20,5 @@ parts.remove(i);
  }
  
 } 
+image(ship,mouseX-50,mouseY-80,d,d); 
 }
