@@ -1,29 +1,65 @@
 class Particle {
-  PVector loc, vel;
-  float d, pcolor;
+  PVector loc, vel,acc;
+  float d, pcolor, t;
 
   Particle(float x, float y) {
     loc= new PVector(x, y);
     vel= PVector.random2D();
+    acc= new PVector(.01,.05);
     d= random(10, 20);
-    pcolor= random(360);
-  }
+    t=100;
+//    pcolor= 0;
+    }
+
   void display() {
     ellipse(loc.x, loc.y, d, d); 
-    fill(pcolor, 100, 100, 100); 
+    fill(100, 10, 100, t); 
+    t-=2;
 }
 void move() {
+  vel.add(acc);
   loc.add(vel); 
 }
+//void transparent(){
+// for(int j=100; j>0; j--){
+//  fill(100, 10, 100, j);
+// } 
+//}
+boolean check(){
+ if(loc.y>height/1.5){
+  return true;
+ } 
+ else{
+  return false; 
+ }
+}
+//void takeOut(){
+//  
+//}
+//boolean check(){
+//  if (loc.y-d/2>height){
+//    return true;
+//  }
+//   else if (loc.x-d/2>width) {
+//return true;
+//  }
+//  else if (loc.x+d/2<0) {
+//    return true;
+//  }
+//  else{ 
+//    return false;
+//  }
+//    
+//}
 void edge() {
-  if (loc.y>height-d/2) {
+  if (loc.y-d/2>height) {
     d=0;
   }
 
-  if (loc.x>width-d/2) {
+  if (loc.x-d/2>width) {
     d=0;
   }
-  if (loc.x<0+d/2) {
+  if (loc.x+d/2<0) {
     d=0;
   }
 }
