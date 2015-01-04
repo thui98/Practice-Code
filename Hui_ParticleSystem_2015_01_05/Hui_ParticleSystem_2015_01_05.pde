@@ -19,12 +19,12 @@ void draw() {
   parts.add(new Particle (mouseX, mouseY));//continuously adds particles where the mouse is
   for (int i=parts.size ()-1; i>=0; i--) {
     Particle p= parts.get(i);
-    p.display();//calls display function
+    p.display();//calls CParticle display function
     p.move();// calls move function
 
     BHole b = new BHole();
-    b.display();
-    b.take(p);
+    b.display();// calls BlackHole display function
+    b.take(p);// calls take function
     if (p.check()) {//checks to see if particle hits at certain y value and removes it if the case is true
       parts.remove(i);
     }

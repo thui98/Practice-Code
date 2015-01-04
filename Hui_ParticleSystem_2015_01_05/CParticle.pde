@@ -31,10 +31,10 @@ class Particle {
     loc.add(vel);
   }
 
-     void newPlace(){
-     loc.set(width-20, height-(height-20));
+  void newPlace() {// assigns a new velocity and location to the particle
+    loc.set(width-20, height-(height-20));
     vel = PVector.random2D();
-   }
+  }
   boolean check() { //checks if particle has hit a certain y-value
     if (loc.y>height/1.5) {
       return true;
