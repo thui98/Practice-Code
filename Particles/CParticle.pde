@@ -21,10 +21,10 @@ pcolor= tempc;
 psaturation= tempsat;
     }
 
-  void display() {
+  void display() {//displays particles as ellipses
     ellipse(loc.x, loc.y, d, d); 
     fill(pcolor, psaturation, 100, ptransparency); 
-    ptransparency-=1;
+    ptransparency-=1;//particle becomes less 
 }
 void move() {
   vel.add(acc);
